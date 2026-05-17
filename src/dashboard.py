@@ -157,6 +157,35 @@ def source_bar(source_distribution: Dict) -> go.Figure:
     return fig
 
 
+def country_bar(country_distribution: Dict) -> go.Figure:
+    if not country_distribution:
+        return go.Figure()
+
+    sorted_items = sorted(country_distribution.items(), key=lambda x: x[1], reverse=True)
+    countries = [c for c, _ in sorted_items][::-1]
+    counts = [n for _, n in sorted_items][::-1]
+
+    bar_colors = [
+        f"rgba(124,58,237,{0.45 + 0.55 * (i / max(len(countries) - 1, 1))})"
+        for i in range(len(countries))
+    ]
+
+    fig = go.Figure(go.Bar(
+        x=counts,
+        y=countries,
+        orientation="h",
+        marker=dict(color=bar_colors, line=dict(width=0)),
+        hovertemplate="<b>%{y}</b>: %{x} mentions<extra></extra>",
+    ))
+    fig.update_layout(
+        **_PLOTLY_TEMPLATE,
+        xaxis_title="Mentions",
+        yaxis_title="",
+        margin=dict(t=10, b=40, l=10, r=10),
+    )
+    return fig
+
+
 def topic_treemap(topics: List[Dict]) -> go.Figure:
     if not topics:
         return go.Figure()

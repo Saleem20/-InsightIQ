@@ -125,6 +125,7 @@ def analyze_conversations(conversations: List[Dict]) -> Dict[str, Any]:
         })
 
     source_dist = df["source"].value_counts().to_dict()
+    country_dist = df["country"].value_counts().to_dict() if "country" in df.columns else {}
 
     pos_df = df[df["sentiment_label"] == "positive"].nlargest(3, "engagement")
     neg_df = df[df["sentiment_label"] == "negative"].nlargest(3, "engagement")
@@ -139,6 +140,7 @@ def analyze_conversations(conversations: List[Dict]) -> Dict[str, Any]:
         "topics": topics,
         "monthly_volume": monthly,
         "source_distribution": source_dist,
+        "country_distribution": country_dist,
         "top_positive": pos_df["text"].tolist(),
         "top_negative": neg_df["text"].tolist(),
         "date_range": (

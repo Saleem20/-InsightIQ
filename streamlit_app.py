@@ -210,8 +210,8 @@ if "results" in st.session_state:
     with kpi3:
         st.markdown(f'<div class="kpi-card"><div class="kpi-value">{analysis["sentiment_pct"].get("positive",0)}%</div><div class="kpi-label">Positive</div></div>', unsafe_allow_html=True)
     with kpi4:
-        top_source = max(analysis["source_distribution"], key=analysis["source_distribution"].get) if analysis["source_distribution"] else "—"
-        st.markdown(f'<div class="kpi-card"><div class="kpi-value" style="font-size:1.3rem">{top_source}</div><div class="kpi-label">Top Source</div></div>', unsafe_allow_html=True)
+        country_count = len(analysis.get("country_distribution", {}))
+        st.markdown(f'<div class="kpi-card"><div class="kpi-value">{country_count}</div><div class="kpi-label">Countries</div></div>', unsafe_allow_html=True)
     with kpi5:
         dr = analysis["date_range"]
         st.markdown(f'<div class="kpi-card"><div class="kpi-value" style="font-size:1rem">{dr[0]}</div><div class="kpi-label">to {dr[1]}</div></div>', unsafe_allow_html=True)
@@ -241,8 +241,13 @@ if "results" in st.session_state:
                 key="chart_keywords",
             )
 
-        st.markdown('<p class="section-header">Source Distribution</p>', unsafe_allow_html=True)
-        st.plotly_chart(dash.source_bar(analysis["source_distribution"]), use_container_width=True, key="chart_source")
+        col_src, col_country = st.columns([1, 1])
+        with col_src:
+            st.markdown('<p class="section-header">Source Distribution</p>', unsafe_allow_html=True)
+            st.plotly_chart(dash.source_bar(analysis["source_distribution"]), use_container_width=True, key="chart_source")
+        with col_country:
+            st.markdown('<p class="section-header">Geographic Distribution</p>', unsafe_allow_html=True)
+            st.plotly_chart(dash.country_bar(analysis.get("country_distribution", {})), use_container_width=True, key="chart_country")
 
     # ── Sentiment ──
     with tab_sentiment:
