@@ -81,6 +81,11 @@ def sentiment_trend(monthly_volume: List[Dict]) -> go.Figure:
     if df.empty:
         return go.Figure()
 
+    fill_colors = {
+        "positive": "rgba(34,197,94,0.12)",
+        "neutral":  "rgba(148,163,184,0.12)",
+        "negative": "rgba(239,68,68,0.12)",
+    }
     fig = go.Figure()
     for label, color in [("positive", _PALETTE["positive"]),
                           ("neutral", _PALETTE["neutral"]),
@@ -92,8 +97,7 @@ def sentiment_trend(monthly_volume: List[Dict]) -> go.Figure:
             line=dict(color=color, width=2.5),
             marker=dict(size=7),
             fill="tozeroy",
-            fillcolor=color.replace(")", ", 0.12)").replace("rgb", "rgba") if "rgb" in color
-            else color + "20",
+            fillcolor=fill_colors[label],
             hovertemplate=f"<b>{label.title()}</b><br>%{{x}}: %{{y}} mentions<extra></extra>",
         ))
     fig.update_layout(
