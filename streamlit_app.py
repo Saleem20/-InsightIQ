@@ -231,21 +231,23 @@ if "results" in st.session_state:
             st.plotly_chart(
                 dash.sentiment_donut(analysis["sentiment_distribution"], analysis["sentiment_pct"]),
                 use_container_width=True,
+                key="chart_donut",
             )
         with col_right:
             st.markdown('<p class="section-header">Top Keywords</p>', unsafe_allow_html=True)
             st.plotly_chart(
                 dash.keywords_bar(analysis["top_keywords"]),
                 use_container_width=True,
+                key="chart_keywords",
             )
 
         st.markdown('<p class="section-header">Source Distribution</p>', unsafe_allow_html=True)
-        st.plotly_chart(dash.source_bar(analysis["source_distribution"]), use_container_width=True)
+        st.plotly_chart(dash.source_bar(analysis["source_distribution"]), use_container_width=True, key="chart_source")
 
     # ── Sentiment ──
     with tab_sentiment:
         st.markdown('<p class="section-header">Sentiment Trend Over Time</p>', unsafe_allow_html=True)
-        st.plotly_chart(dash.sentiment_trend(analysis["monthly_volume"]), use_container_width=True)
+        st.plotly_chart(dash.sentiment_trend(analysis["monthly_volume"]), use_container_width=True, key="chart_sentiment_trend")
 
         col_pos, col_neg = st.columns(2)
         with col_pos:
@@ -262,7 +264,7 @@ if "results" in st.session_state:
         topics = analysis.get("topics", [])
         if topics:
             st.markdown('<p class="section-header">Topic Cluster Map</p>', unsafe_allow_html=True)
-            st.plotly_chart(dash.topic_treemap(topics), use_container_width=True)
+            st.plotly_chart(dash.topic_treemap(topics), use_container_width=True, key="chart_treemap")
 
             st.markdown('<p class="section-header">Topic Summary</p>', unsafe_allow_html=True)
             import pandas as pd
@@ -282,10 +284,10 @@ if "results" in st.session_state:
     # ── Trends ──
     with tab_trends:
         st.markdown('<p class="section-header">Mention Volume Over Time</p>', unsafe_allow_html=True)
-        st.plotly_chart(dash.volume_area(analysis["monthly_volume"]), use_container_width=True)
+        st.plotly_chart(dash.volume_area(analysis["monthly_volume"]), use_container_width=True, key="chart_volume")
 
         st.markdown('<p class="section-header">Sentiment Breakdown by Month</p>', unsafe_allow_html=True)
-        st.plotly_chart(dash.sentiment_trend(analysis["monthly_volume"]), use_container_width=True)
+        st.plotly_chart(dash.sentiment_trend(analysis["monthly_volume"]), use_container_width=True, key="chart_sentiment_trend_2")
 
         if analysis["monthly_volume"]:
             import pandas as pd
