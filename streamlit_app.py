@@ -82,17 +82,17 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+# ── Read API key from backend environment only ────────────────────────────────
+api_key = os.getenv("OPENAI_API_KEY") or None
+
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("## ⚙️ Configuration")
-    api_key = st.text_input(
-        "OpenAI API Key",
-        type="password",
-        value=os.getenv("OPENAI_API_KEY", ""),
-        help="Optional — enables AI-powered classification and insight generation. Falls back to rule-based mode if not provided.",
-        placeholder="sk-...",
+    st.markdown(
+        f"**AI Model:** `gpt-4o-mini`  \n"
+        f"**NLP Engine:** VADER Sentiment + sklearn NMF  \n"
+        f"**Status:** {'🟢 AI mode active' if api_key else '🟡 Rule-based mode'}"
     )
-    st.caption("Your key is never stored. Used only for this session.")
     st.divider()
 
     st.markdown("### 💡 Example Queries")
@@ -156,7 +156,7 @@ if analyze and query.strip():
     progress = st.progress(0, text="Understanding your query…")
     time.sleep(0.3)
 
-    classification = classify_query(query, api_key or None)
+    classification = classify_query(query, api_key)
     progress.progress(20, text="Retrieving social conversations…")
     time.sleep(0.3)
 
@@ -168,7 +168,7 @@ if analyze and query.strip():
     progress.progress(70, text="Generating AI insights…")
     time.sleep(0.3)
 
-    insights = generate_insights(query, classification, analysis, api_key or None)
+    insights = generate_insights(query, classification, analysis, api_key)
     progress.progress(100, text="Done!")
     time.sleep(0.2)
     progress.empty()
