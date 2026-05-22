@@ -1,0 +1,115 @@
+category,country,country_name,rank,brand
+Toothpaste,US,United States,1,Crest
+Toothpaste,US,United States,2,Colgate
+Toothpaste,US,United States,3,Sensodyne
+Toothpaste,US,United States,4,Arm & Hammer
+Toothpaste,IN,India,1,Colgate
+Toothpaste,IN,India,2,Pepsodent
+Toothpaste,IN,India,3,Sensodyne
+Toothpaste,IN,India,4,Close-Up
+Toothpaste,IN,India,5,Patanjali Dant Kanti
+Toothpaste,IN,India,6,Dabur Red
+Toothpaste,CN,China,1,Yunnan Baiyao
+Toothpaste,CN,China,2,Darlie
+Toothpaste,CN,China,3,Colgate
+Toothpaste,CN,China,4,Crest
+Toothpaste,CN,China,5,Zhonghua
+Toothpaste,GB,United Kingdom,1,Colgate
+Toothpaste,GB,United Kingdom,2,Sensodyne
+Toothpaste,GB,United Kingdom,3,Oral-B
+Toothpaste,GB,United Kingdom,4,Aquafresh
+Mouthwash,US,United States,1,Listerine
+Mouthwash,US,United States,2,Crest
+Mouthwash,US,United States,3,Colgate
+Mouthwash,IN,India,1,Listerine
+Mouthwash,IN,India,2,Colgate
+Mouthwash,IN,India,3,Closeup
+Mouthwash,CN,China,1,Listerine
+Mouthwash,CN,China,2,Colgate
+Mouthwash,CN,China,3,Yunnan Baiyao
+Mouthwash,GB,United Kingdom,1,Listerine
+Mouthwash,GB,United Kingdom,2,Corsodyl
+Mouthwash,GB,United Kingdom,3,Colgate
+VMS,US,United States,1,Centrum
+VMS,US,United States,2,Nature Made
+VMS,US,United States,3,One A Day
+VMS,US,United States,4,Vitafusion
+VMS,IN,India,1,Himalaya
+VMS,IN,India,2,Dabur
+VMS,IN,India,3,Patanjali
+VMS,IN,India,4,Supradyn
+VMS,CN,China,1,By-Health
+VMS,CN,China,2,Centrum
+VMS,CN,China,3,Tong Ren Tang
+VMS,GB,United Kingdom,1,Vitabiotics
+VMS,GB,United Kingdom,2,Seven Seas
+VMS,GB,United Kingdom,3,Centrum
+VMS,GB,United Kingdom,4,Berocca
+VMS,GB,United Kingdom,5,Haliborange
+Beverages,US,United States,1,Coca-Cola
+Beverages,US,United States,2,Pepsi
+Beverages,US,United States,3,Mountain Dew
+Beverages,US,United States,4,Dr Pepper
+Beverages,US,United States,5,Sprite
+Beverages,IN,India,1,Coca-Cola
+Beverages,IN,India,2,Thums Up
+Beverages,IN,India,3,Pepsi
+Beverages,IN,India,4,Sprite
+Beverages,IN,India,5,Limca
+Beverages,IN,India,6,Maaza
+Beverages,CN,China,1,Nongfu Spring
+Beverages,CN,China,2,Coca-Cola
+Beverages,CN,China,3,Sprite
+Beverages,CN,China,4,Wanglaoji
+Beverages,GB,United Kingdom,1,Coca-Cola
+Beverages,GB,United Kingdom,2,Pepsi
+Beverages,GB,United Kingdom,3,Lucozade
+Digestive,US,United States,1,Pepcid
+Digestive,US,United States,2,Gaviscon
+Digestive,US,United States,3,Tums
+Digestive,US,United States,4,Alka-Seltzer
+Digestive,US,United States,5,Prilosec
+Digestive,IN,India,1,Digene
+Digestive,IN,India,2,Gelusil
+Digestive,IN,India,3,Eno
+Digestive,IN,India,4,Pudin Hara
+Digestive,CN,China,1,Gaviscon
+Digestive,CN,China,2,Bayer Digestive
+Digestive,GB,United Kingdom,1,Pepcid
+Digestive,GB,United Kingdom,2,Gaviscon
+Digestive,GB,United Kingdom,3,Rennie
+Digestive,GB,United Kingdom,4,Gaviscon Double Action
+Shoes,US,United States,1,Nike
+Shoes,US,United States,2,Skechers
+Shoes,US,United States,3,Adidas
+Shoes,US,United States,4,Under Armour
+Shoes,US,United States,5,New Balance
+Shoes,IN,India,1,Bata
+Shoes,IN,India,2,Nike
+Shoes,IN,India,3,Adidas
+Shoes,IN,India,4,Relaxo
+Shoes,IN,India,5,Red Chief
+Shoes,CN,China,1,Belle
+Shoes,CN,China,2,Li Ning
+Shoes,CN,China,3,Anta
+Shoes,CN,China,4,Nike
+Shoes,CN,China,5,Adidas
+Shoes,GB,United Kingdom,1,Nike
+Shoes,GB,United Kingdom,2,Adidas
+Shoes,GB,United Kingdom,3,Clarks
+Shoes,GB,United Kingdom,4,Dr. Martens
+SUV,US,United States,1,Toyota RAV4
+SUV,US,United States,2,Honda CR-V
+SUV,US,United States,3,Chevrolet Equinox
+SUV,US,United States,4,Tesla Model Y
+SUV,IN,India,1,Hyundai Creta
+SUV,IN,India,2,Kia Seltos
+SUV,IN,India,3,Tata Nexon
+SUV,IN,India,4,Mahindra XUV
+SUV,IN,India,5,Maruti Brezza
+SUV,CN,China,1,Tesla Model Y
+SUV,CN,China,2,BYD Song
+SUV,CN,China,3,Toyota RAV4
+SUV,GB,United Kingdom,1,Ford Puma
+SUV,GB,United Kingdom,2,Kia Sportage
+SUV,GB,United Kingdom,3,Nissan Qashqai
